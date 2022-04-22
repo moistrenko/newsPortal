@@ -1,5 +1,5 @@
-const prepareDate = (value) => {
-	const newDate = new Date(value.value);
+const  prepareDate = (value: string) => {
+	const newDate = new Date(value);
 	return {day: newDate.getDay(), month: newDate.getMonth() + 1}
 }
 
