@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"homepage": "/newsPortal/",
 		"baseUrl": "src",
 		"jsx": "react-jsx",
 		"esModuleInterop": true,
