@@ -2,8 +2,12 @@ import React from 'react';
 import prepareDate from '../utils/prepareDate';
 import './styles.sass'
 
-const DateView = (props) => {
-	const {day, month} = prepareDate(props);
+interface IDateViewParams {
+	value: string
+}
+
+const DateView: React.FC<IDateViewParams> = ({value}) => {
+	const {day, month} = prepareDate(value);
 	return (
 		<div className="date-view">
 			<span className="day">{day}</span> / {" "}

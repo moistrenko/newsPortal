@@ -4,15 +4,19 @@ import DateView from 'components/DateView';
 import routeMain from './routes';
 import getNews from 'services/getNews';
 
+import {ID} from 'types/ID'
+import { INewsDetail } from 'types/INewsDetail';
+
 import './styles.sass'
 
 const NewsDetailPage = () => { 
-	const {id} = useParams();
-	const [news, setNews] = useState(null);
-
+	const {id} = useParams<ID>();
+	const [news, setNews] = useState<INewsDetail | null>(null);
+	
 	useEffect(() => {
 		getNews().then((response) => {
-			setNews(response.articles.find( item => item._id === id))
+			const currentNews = response.data.articles?.find( (item: INewsDetail) => item._id === id)
+			setNews(currentNews)
 		})
 	}, [id])
 	return (

@@ -4,13 +4,15 @@ import routeMain from "./routes";
 import NewsList from "components/NewsList";
 import getNews from "services/getNews";
 
+import {INewsDetail} from 'types/INewsDetail'
+
 import "./styles.sass";
 
 const NewsPage = () => {
-	const [newsList, setNewsList] = useState([])
+	const [newsList, setNewsList] = useState<INewsDetail[]>([])
 
 	useEffect(() => {
-		getNews().then((response) => setNewsList(response.articles))
+		getNews().then((response) => setNewsList(response.data.articles))
 	}, [])
 
 	return (

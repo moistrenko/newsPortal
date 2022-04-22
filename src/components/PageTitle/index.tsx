@@ -1,10 +1,14 @@
 import React from "react";
 import "./styles.sass";
 
-const PageTitle = (props) => {
+interface IPageTitleParams {
+	title: JSX.Element;
+}
+
+const PageTitle: React.FC<IPageTitleParams> = ({title}) => {
 	return (
 		<div className='page-title'>
-			{props.title}
+			{title}
 		</div>
 	);
 };

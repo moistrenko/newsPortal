@@ -15,10 +15,10 @@ const AppContent = () => {
 			<Header />
 			<main>
 				<Routes>
-					<Route exact path={routeMainPage()} element={<MainPage/>} />
-					<Route exact path={routeContactsPage()} element={<ContactsPage/>} />
-					<Route exact path={routeNewsPage()} element={<NewsPage/>} />
-					<Route exact path={routeNewsDetailPage()} element={<NewsDetailPage/>} />
+					<Route path={routeMainPage()} element={<MainPage/>} />
+					<Route path={routeContactsPage()} element={<ContactsPage/>} />
+					<Route  path={routeNewsPage()} element={<NewsPage/>} />
+					<Route  path={routeNewsDetailPage()} element={<NewsDetailPage/>} />
 					<Route path="*" element={<Navigate to={routeMainPage()} />}/>
 				</Routes>
 			</main>
